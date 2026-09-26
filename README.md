@@ -1,70 +1,30 @@
 # NSA Manageable Network Security Plan (MNSP)
 
-## Overview
+Applied the NSA's Manageable Network Plan, an 8-milestone framework for turning an unmanaged network into a documented, defensible, and maintainable one, to a home network environment. Covers network discovery, segmentation, protocol hardening, access control, patch management, and security documentation end to end.
 
-This project applied the NSA Manageable Network Security Plan (MNSP) framework to assess network security through asset discovery, service enumeration, and security analysis. The objective was to identify networked devices, evaluate potential vulnerabilities, and develop recommendations aligned with security best practices.
-
-Using Nmap on Kali Linux, I performed network reconnaissance, documented discovered assets, analyzed exposed services, and developed security recommendations to improve the overall security posture of the environment.
-
----
-
-## Objectives
-
-- Perform network discovery and asset inventory
-- Identify active hosts and exposed services
-- Analyze potential security risks within the environment
-- Evaluate network configurations against security standards
-- Develop recommendations to improve overall security posture
-
----
-
-## Tools Used
-
-- Nmap
-- Kali Linux
-- Windows
-- Command Line Interface (CLI)
-
----
-
-## Skills Demonstrated
-
-- Network Enumeration
-- Asset Inventory Management
-- Vulnerability Assessment
-- Security Baseline Analysis
-- Network Documentation
-- Risk Assessment
-- Network Reconnaissance
-
----
+**Stack:** Nmap · Kali Linux · Windows · VMware (isolated lab segment)
 
 ## Methodology
 
-1. Conducted network reconnaissance using Nmap to identify active hosts.
-2. Enumerated open ports and exposed network services.
-3. Documented discovered assets and network information.
-4. Assessed potential attack surfaces and security weaknesses.
-5. Evaluated findings against NSA MNSP recommendations.
-6. Developed security improvement recommendations to strengthen the environment.
+The assessment followed all 8 MNSP milestones in order:
 
----
+1. **Prepare:** established a centralized, version-controlled documentation repository with change tracking, encrypted backups, and offline hard-copy availability for critical procedures.
+2. **Map:** used Nmap host discovery to enumerate active devices, build a device inventory (role, status, approval), and diagram the physical and logical network path from gateway to endpoint.
+3. **Protect:** defined network enclaves (a general-use segment and an isolated VMware lab segment), identified high-value assets and choke points, and documented containment, encryption, and incident response procedures.
+4. **Reach:** eliminated clear-text administrative protocols (HTTP, Telnet, FTP) in favor of HTTPS-only management, disabled remote administration by default, and required VPN for any remote access.
+5. **Control:** enforced least-privilege, non-administrative accounts for daily use, separated administrative credentials from standard accounts, and restricted network access to approved, reviewed devices.
+6. **Manage (Patch Management):** implemented automatic OS and firmware updates, tracked non-Microsoft software updates, and identified and avoided end-of-life hardware and software.
+7. **Manage (Baseline Management):** defined a device security baseline, an approved-applications allowlist, endpoint antivirus protection, and unique, password-manager-issued credentials across accounts.
+8. **Document:** maintained administrative process documentation, system rebuild procedures, and backup/recovery runbooks sufficient for another administrator to execute without verbal instruction.
 
-## Key Takeaways
+## Key Findings
 
-This project strengthened my understanding of network visibility, asset management, service enumeration, and foundational security assessment techniques. It reinforced the importance of maintaining an accurate asset inventory, reducing unnecessary network exposure, and applying security frameworks to real-world environments.
+Applying a structured framework to an unmanaged network surfaced real, prioritizable gaps rather than a generic checklist. The completed assessment identified specific open items around network segmentation depth, intrusion detection coverage, remote-access tooling, and centralized identity management, each mapped back to the milestone it falls under and each with a documented remediation path.
 
----
+## Skills Demonstrated
 
-## Repository Contents
+Network discovery and asset inventory with Nmap, network segmentation and enclave design, protocol and administrative-access hardening, least-privilege access control, patch and baseline management, and security documentation aligned to a recognized framework (NSA MNSP) and referencing NIST SP 800-41, 800-34, and 800-61.
 
-- Project documentation
-- Assessment findings
-- Screenshots and supporting evidence
-- Security recommendations
+## A Note on Scope
 
----
-
-## Technologies
-
-`Nmap` `Kali Linux` `Windows` `Network Security` `Asset Discovery` `Risk Assessment`
+This assessment was performed against a real, in-use network rather than a disposable lab environment. Specific IP addressing, device inventory, and identified security gaps are intentionally omitted from this public write-up. Publishing a live network's exact topology and open weaknesses is itself a security mistake, and recognizing that distinction is part of the assessment.
